@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANI VOICE - Portal Berita dan Galeri Terbaru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #0d213a 0%, hsl(201, 90%, 11%) 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(3, 31, 53, 0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(2, 36, 44, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-black-600">LANI VOICE</h1>
+            <nav class="hidden md:flex space-x-6 text-gray-900">
+                <a href="#home" class="hover:text-blue-700 transition">Home</a>
+                <a href="#berita" class="hover:text-lue-500 transition">News</a>
+                <a href="#galeri" class="hover:text-blue-500 transition">Galeri</a>
+                <a href="#tentang" class="hover:text-blue-500 transition">About Me</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-md">
+            <nav class="container mx-auto px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 hover:text-blue-500 transition">Home</a>
+                <a href="#berita" class="block py-2 hover:text-blue-500 transition">News</a>
+                <a href="#galeri" class="block py-2 hover:text-blue-500 transition">Galeri</a>
+                <a href="#tentang" class="block py-2 hover:text-blue-500 transition">About Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-3">selamat Datang di</h2>
+            <h2 class="text-5xl font-bold mb-4">LANI VOICE</h2>
+            <p class="text-xl mb-8">LaniVoice berbagi informasi akurat, terkini dan fakta,fiktif, galeri menarik, dan artikel inspiratif dari semua kategori.</p>
+            <a href="#berita" class="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full font-semibold transition">Baca Berita Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Featured News -->
+        <section id="berita" class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-center">Berita Terbaru</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-lg shadow-md card-hover overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d1d17f75-39c5-4db6-8f19-7b9a0ada07fc.png" alt="Gedung pencakar langit modern di kota besar dengan langit biru dan awan putih, menampilkan inovasi architekturnal dengan kaca dan baja hitam" class="w-full h-48 object-cover" onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e960cabf-30b2-4064-b554-a110d0e65b6f.png?text=No+image'"/>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-4">Inovasi Teknologi di Kota Tiongkok berambisi Besar revolusi 4.0 (LaniVoice)</h4>
+                        <p class="text-gray-600 mb-4">Eksplorasi bagaimana teknologi canggih membentuk masa depan perkotaan dan meningkatkan kualitas kerja manusia 4.0 revolusi (DIGITALISASI),LaniVoice ...</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Baca Selanjutnya</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-lg shadow-md card-hover overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0780a5f8-2080-42ba-804b-bd32f9b8e618.png" alt="Pemandangan pantai indah dengan pasir putih, air laut yang jernih, dan matahari terbenam oranye yang spektakuler" class="w-full h-48 object-cover" onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e7991d92-6cc2-47ce-a981-79522cbed872.png'"/>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Generasi muda papua kian mundur dari revolusi 4.0</h4>
+                        <p class="text-gray-600 mb-4">Lihatlah setiap anak,pemuda,remaja sangat pesat komsumsi miras, kamatian karakter dan attitude tenggelam di bayang-banyang. memikat hati masyarakat... (LaniVoice)</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Baca Selanjutnya</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-lg shadow-md card-hover overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e915b0dc-8f63-4fd6-b183-faa558dd5dc0.png" alt="Ruang kerja kreatif dengan laptop, buku, dan lampu meja, terinspirasi oleh desain minimalis modern" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/400x250?text=No+image'"/>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Produktivitas Harian papua </h4>
+                        <p class="text-gray-600 mb-4">Panduan untuk meningkatkan efisiensi dalam rutinitas kerja sehari-hari, pantai AMAI/tablanusu.kabjayapura (papua.LaniVoice)...</p>
+                        <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Baca Selanjutnya</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="galeri" class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-center">Galeri Foto</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a98a33db-e3c0-4c2d-8053-6e89720bc0b3.png" alt="Hutan tropis dengan pepohonan hijau lebat, sungai yang mengalir tenang, dan keanekaragaman hayati yang kaya" class="w-full h-48 object-cover rounded-lg" data-src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6cc861e-fcc6-4527-ae8f-9d32fb6fc514.png" onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a9b8b7f1-27a2-48f2-a9de-67c7db2f36df.png?text=No+image'"/>
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e3003408-b87a-4569-a393-0abd74d2d7d6.png" alt="Menu makanan lezat dengan hidangan hot dog, hamburger, dan kentang goreng di kafe kasual dengan iluminasi hangat" class="w-full h-48 object-cover rounded-lg" data-src="https://placehold.co/600x400" onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a7f8c75a-9feb-4f0a-b7ca-522a0006c8ca.png?text=No+image'"/>
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c403a48c-3645-4547-a4cc-93f8d132a5f6.png" alt="Bangunan bersejarah klasik dengan arsitektur Eropa, jendela tinggi, dan langit biru cerah" class="w-full h-48 object-cover rounded-lg" data-src="https://placehold.co/600x400" onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dfe2a461-dc30-448d-aaaa-20d9b43c4728.png'"/>
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://placehold.co/300x200" alt="Seniman abstrak dengan palet cat dan kuas, menciptakan karya seni berwarna-warni di studio cahaya alami" class="w-full h-48 object-cover rounded-lg" data-src="https://placehold.co/600x400" onerror="this.src='https://placehold.co/300x200?text=No+image'"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="tentang" class="bg-white rounded-lg shadow-md p-8">
+            <h3 class="text-3xl font-bold mb-4">Tentang Kami</h3>
+            <p class="text-gray-600 leading-relaxed">Lani Voice adalah tempat di mana Anda dapat menemukan berita terkini, galeri foto inspiratif, dan konten yang menghibur. Kami berkomitmen untuk menyediakan konten berkualitas tinggi yang informatif dan menarik. Mari bergabung dalam petualangan media ini!</p>
+        </section>
+    </main>
+
+    <!-- Modal for Gallery -->
+    <div id="gallery-modal" class="modal">
+        <img id="modal-image" class="modal-content" src="" alt="Gambar galeri" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f78d363e-7697-41cd-84c8-4da664d11adc.png">
+        <span id="modal-close" class="absolute top-4 right-4 text-white text-3xl cursor-pointer">&times;</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Lani Voice. Semua hak cipta dilindungi.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition">Kontak Kami - </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Privasi - </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">lanivoice07@gmail.com</a>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gallery modal
+        const modal = document.getElementById('gallery-modal');
+        const modalImg = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
+         const modalClose = document.getElementById('modal-parameter')
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.querySelector('img').getAttribute('data-src');
+                modalImg.src = src;
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>
